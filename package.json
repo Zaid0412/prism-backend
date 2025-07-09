@@ -4,10 +4,11 @@
   "description": "Backend for Prism Rubik's Cube Timer App",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/index.js",
     "dev": "nodemon src/index.ts",
-    "db:generate": "prisma generate",
+    "start": "node dist/index.js",
+    "generate": "prisma generate",
+    "build": "prisma generate && tsc",
+    "postinstall": "prisma generate",
     "db:push": "prisma db push",
     "db:migrate": "prisma migrate dev",
     "db:studio": "prisma studio"
